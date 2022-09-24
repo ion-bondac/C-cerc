@@ -1,0 +1,54 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+float latura(float x1, float x2, float y1, float y2){
+    float lat;
+    lat=sqrt(pow((x1-x2),2)+(pow((y1-y2),2)));
+    return lat;
+}
+float aria(float x, float y, float z){
+    float p, aria;
+    p=(x+y+z)/2;
+    aria=sqrt(p*(p-x)*(p-y)*(p-z));
+    return aria;
+}
+
+int main()
+{
+    float x_1,x_2,x_3,y_1,y_2,y_3,x_4,y_4;
+    float latura1,latura2,latura3,latura4,latura5,latura6;
+    float aria_principala, aria1,aria2,aria3;
+    cout<<"x_1=",cin>>x_1;
+    cout<<"x_2=",cin>>x_2;
+    cout<<"x_3=",cin>>x_3;
+    cout<<"y_1=",cin>>y_1;
+    cout<<"y_2=",cin>>y_2;
+    cout<<"y_3=",cin>>y_3;
+    cout<<"x_4=",cin>>x_4;
+    cout<<"y_4=",cin>>y_4;
+    latura1=latura(x_1,x_2,y_1,y_2);
+    latura2=latura(x_2,x_3,y_2,y_3);
+    latura3=latura(x_1,x_3,y_1,y_3);
+    aria_principala=aria(latura1,latura2,latura3);
+    latura4=latura(x_1,x_4,y_1,y_4);
+    latura5=latura(x_2,x_4,y_2,y_4);
+    latura6=latura(x_3,x_4,y_3,y_4);
+    aria1=aria(latura1,latura4,latura5);
+    aria2=aria(latura2,latura5,latura6);
+    aria3=aria(latura3,latura4,latura6);
+    if (aria1==0 || aria2==0 || aria3==0)
+        cout<<"Punctul se afla pe una din laturi";
+    else if (fabs(aria_principala-(aria1+aria2+aria3))<0.01)
+        cout<<"Punctul se afla in interiorul triunghiului";
+    else
+        cout<<"Punctul se afla in exteriorul triunghiului";
+    return 0;
+}
