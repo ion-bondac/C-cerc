@@ -21,7 +21,7 @@ float heron(float d1, float d2, float d3)
 }
 int main()
 {
-    float xa,ya,xb,yb,xc,yc,xd,yd,dab,dac,dbc,s;
+    float xa,ya,xb,yb,xc,yc,xd,yd,dab,dac,dbc,dao,dbo,dco,s,s1;
     xa=1;
     ya=1;
     xb=5;
@@ -34,7 +34,13 @@ int main()
     dac=latura(xa,ya,xc,yc);
     dbc=latura(xb,yb,xc,yc);
     s=heron(dab,dac,dbc);
+    dao=latura(xa,ya,xd,yd);
+    dbo=latura(xb,yb,xd,yd);
+    dco=latura(xc,yc,xd,yd);
+    saob=heron(dab,dao,abo);
+    saoc=heron(dac,dao,aco);
+    sboc=heron(dbs,dbo,aco);
+    s1=saoc+saob+sboc;
+    if ()
     cout<<s;
     return 0;
-    
-}
